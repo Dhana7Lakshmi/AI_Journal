@@ -6,8 +6,8 @@
 export class LifeReelAPI {
   constructor() {
     const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
-    // Expose local backend securely to the Render frontend via ngrok
-    this.baseUrl = isLocal ? 'http://localhost:8000' : 'https://expediter-unpiloted-tidal.ngrok-free.dev';
+    // Retrieve base URL from environment variables if defined, falling back to local/ngrok defaults
+    this.baseUrl = import.meta.env.VITE_API_URL || (isLocal ? 'http://localhost:8000' : 'https://expediter-unpiloted-tidal.ngrok-free.dev');
   }
 
   /**
