@@ -1,0 +1,279 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-tech: 'Outfit', monospace;
+  
+  /* Vibrant premium warm peach palette */
+  --bg-peach-radial: radial-gradient(circle at 50% 50%, #FFF5EC 0%, #FFDFCB 100%);
+  --bg-surface: rgba(255, 255, 255, 0.72);
+  --border-glow: rgba(255, 141, 161, 0.22);
+  --border-active: rgba(255, 141, 161, 0.55);
+  
+  --text-primary: #4A3E3D;
+  --text-secondary: #85706E;
+  --text-muted: #BFA2A0;
+  
+  /* Primary HSL Gradients */
+  --glow-pink: #ff8da1;
+  --glow-blue: #55c2ff;
+  --glow-purple: #b38dfd;
+  
+  --glass-shadow: 0 8px 32px 0 rgba(225, 175, 165, 0.16);
+  --glass-border: 1px solid rgba(255, 141, 161, 0.28);
+  
+  /* Mood HSL colors */
+  --mood-calm: #5ca18b;
+  --mood-nostalgic: #d4803b;
+  --mood-inspired: #7c62db;
+  --mood-grateful: #db5c79;
+  --mood-joyful: #ccaa0c;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--bg-peach-radial) !important;
+  color: var(--text-primary);
+  min-height: 100vh;
+}
+
+/* Glassmorphism card utility */
+.glass-card {
+  background: var(--bg-surface);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: var(--glass-border);
+  border-radius: 24px;
+  box-shadow: var(--glass-shadow);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.glass-card:hover {
+  border-color: var(--border-active);
+  box-shadow: 0 12px 40px 0 rgba(255, 141, 161, 0.12);
+}
+
+/* Emotion Badges */
+.emotion-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 99px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  font-family: var(--font-tech);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+.emotion-badge.calm {
+  background: rgba(163, 226, 207, 0.15);
+  color: var(--mood-calm);
+  border-color: rgba(163, 226, 207, 0.3);
+}
+
+.emotion-badge.nostalgic {
+  background: rgba(255, 209, 169, 0.15);
+  color: var(--mood-nostalgic);
+  border-color: rgba(255, 209, 169, 0.3);
+}
+
+.emotion-badge.inspired {
+  background: rgba(195, 180, 252, 0.15);
+  color: var(--mood-inspired);
+  border-color: rgba(195, 180, 252, 0.3);
+}
+
+.emotion-badge.grateful {
+  background: rgba(255, 158, 186, 0.15);
+  color: var(--mood-grateful);
+  border-color: rgba(255, 158, 186, 0.3);
+}
+
+.emotion-badge.joyful {
+  background: rgba(255, 232, 133, 0.15);
+  color: var(--mood-joyful);
+  border-color: rgba(255, 232, 133, 0.3);
+}
+
+/* Spinner Animation */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Premium Timeline Card styles */
+.timeline-card-wrapper {
+  margin-bottom: 2rem;
+  overflow: hidden;
+}
+
+.timeline-media-section {
+  position: relative;
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #000000;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* Video controls styling */
+video.memory-video-player {
+  width: 100%;
+  display: block;
+  max-height: 480px;
+  object-fit: contain;
+}
+
+/* Carousel Styles */
+.carousel-container {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+}
+
+.carousel-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-slide.active {
+  opacity: 1;
+}
+
+.carousel-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.75);
+  border: 1px solid rgba(255, 141, 161, 0.15);
+  color: var(--text-primary);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(4px);
+}
+
+.carousel-btn:hover {
+  background: rgba(255, 141, 161, 0.95);
+  border-color: #ff8da1;
+  color: #ffffff;
+}
+
+.carousel-btn-left {
+  left: 1rem;
+}
+
+.carousel-btn-right {
+  right: 1rem;
+}
+
+.carousel-dots {
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.5rem;
+  z-index: 10;
+}
+
+.carousel-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.carousel-dot.active {
+  background: #ff8da1;
+  transform: scale(1.25);
+  box-shadow: 0 0 8px #ff8da1;
+}
+
+/* Accordion Styles */
+.transcript-accordion-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem 1.5rem;
+  background: rgba(255, 255, 255, 0.35);
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.3s ease;
+  border-top: 1px solid rgba(255, 141, 161, 0.12);
+}
+
+.transcript-accordion-header:hover {
+  background: rgba(255, 255, 255, 0.55);
+}
+
+.transcript-accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.175, 0.885, 0.32, 1);
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.transcript-accordion-content.open {
+  max-height: 500px;
+}
+
+.transcript-inner-text {
+  padding: 1.5rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+/* Custom interactive button styles */
+.btn-premium-nav {
+  padding: 0.75rem 1.5rem;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.45);
+  border: 1px solid rgba(255, 141, 161, 0.2);
+  color: var(--text-primary);
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+  text-decoration: none;
+}
+
+.btn-premium-nav:hover {
+  background: rgba(255, 141, 161, 0.15);
+  border-color: var(--glow-pink);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 141, 161, 0.15);
+}

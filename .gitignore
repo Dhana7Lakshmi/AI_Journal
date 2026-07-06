@@ -1,0 +1,39 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual Environment
+.venv/
+venv/
+ENV/
+env/
+
+# Local environment configuration
+.env
+.env.local
+.env.*.local
+
+# Frontend build cache and dependencies
+node_modules/
+.vite/
+dist/
+dist-ssr/
+
+# IDE settings
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Temp and runtime data
+backend/tmp/
+backend/static/images/*.png
+backend/static/images/*.jpg
+backend/static/images/*.jpeg
+backend/static/audio/*.wav
+backend/static/audio/*.mp3
+backend/static/videos/*.mp4

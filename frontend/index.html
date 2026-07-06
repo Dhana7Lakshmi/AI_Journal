@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LifeReel AI | Cozy Memory Diary</title>
+  <meta name="description" content="LifeReel AI is a cozy, cute digital memory diary. AI-assisted memory preservation platform. Saves your voice recordings, text memories, and photos with optional memory illustrations.">
+  
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  
+  <!-- Global Stylesheet -->
+  <link rel="stylesheet" href="src/styles/global.css">
+  
+  <!-- Premium Glassmorphic Theme -->
+  <link rel="stylesheet" href="src/assets/css/theme.css">
+</head>
+<body>
+
+  <!-- Cosmic Ambient Background (Kept outside SPA mount to preserve float animations) -->
+  <div class="ambient-bg" aria-hidden="true">
+    <div class="ambient-orb orb-1"></div>
+    <div class="ambient-orb orb-2"></div>
+    <div class="ambient-orb orb-3"></div>
+  </div>
+
+  <!-- SPA Core Mounting Container -->
+  <div id="app-mount" class="app-container"></div>
+
+  <!-- Application Entry Module -->
+  <script type="module" src="src/app.js"></script>
+</body>
+</html>
